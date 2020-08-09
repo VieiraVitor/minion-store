@@ -5,7 +5,7 @@ import Login from './pages/Login';
 function Routes() {
     return (
         <BrowserRouter>
-            {/* <Route path="/" exact component={Login} />   */}
+            <Route path="/" exact component={Login} />  
         </BrowserRouter>
     );
 }
