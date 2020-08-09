@@ -1,0 +1,17 @@
+#page-create-account-form main button  {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    color: #665835;
+    background: #fdb817;
+    border: 1px solid #E6E6F0;
+    outline: 0;
+    padding: 0 1.6rem;
+    transition: background-color .2s;
+}
+
+#page-create-account-form main button:hover  {
+    border: 0;
+    cursor: pointer;
+}
