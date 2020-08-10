@@ -9,7 +9,7 @@ function CreateAccount() {
         <div id="page-create-account-form" className="container">
             <main>
                 <form>
-                    <h1>Create Account</h1>
+                    <h1>Create an Account</h1>
                     <Input
                         type="text"
                         placeholder="Name"
