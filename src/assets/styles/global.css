@@ -24,15 +24,18 @@ body {
     background: var(--color-background);
 }
 
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 body, input, button, textarea, p, a {
     font: 500 1.6rem Poppins;
     color: var(--color-text-base);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+p {
+    margin-top: 1.6rem;
 }
 
 form {

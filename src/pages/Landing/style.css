@@ -1,8 +1,7 @@
 .page-header {
     display: flex;
     flex-direction: column;
-    background-color: #000;
-    height: 10vh;
+    background-color: var(--color-background);
 }
 
 .page-header .top-bar-container {
@@ -11,22 +10,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-text-in-primary);
+    color: var(--color-line-in-white);
     padding: 1.6rem 0;
 }
 
 .page-header .top-bar-container a {
-    height: 3.2rem;
+    margin: 0 0.8rem;
+    text-decoration: none;
+    padding: 0.8rem;
     transition: opacity 0.2s;
 }
 
 .page-header .top-bar-container a:hover {
-    opacity: 0.6;
+    font-weight: bold;
 }
 
-main .page-landing-header{
+main .page-landing-header {
     width: 100%;
-    background-color: teal;
+    background-color: #143550;
+    height: 80vh;
+    background-image: url("../../assets/images/minions-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 main .minion-item {
@@ -36,9 +42,16 @@ main .minion-item {
 
 @media (min-width: 700px) {
     .page-header {
-        height: 15vh;
+        min-height: 70px;
+        max-height: 15vh;
     }
     .page-header .top-bar-container {
         max-width: 1100px;
+    }
+}
+
+@media (max-height: 400px) {
+    main .page-landing-header  {
+        background-image: none;
     }
 }

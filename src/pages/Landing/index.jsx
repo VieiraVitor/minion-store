@@ -23,7 +23,7 @@ function Landing() {
 
             <main>
                 <header className="page-landing-header">
-                    Uma imagem foda 
+                    Ola ola ola 
                 </header>
                 <article className="minion-item">
                     <header>

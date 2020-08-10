@@ -1,13 +1,11 @@
-h1 {
-    text-align: center;
-    margin-bottom: 1.6rem;
+#page-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-p {
-    margin-top: 1.6rem;
-}
-
-a {
+#page-login-form a {
     margin-left: 1.1rem;
     color:#fdb817;
     font-weight: bold;
@@ -15,7 +13,7 @@ a {
     transition: .2s;
 }
 
-a:hover {
+#page-login-form a:hover {
     transform: scale(1.05);
 }
 
