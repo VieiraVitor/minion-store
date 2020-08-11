@@ -4,6 +4,15 @@ import '../../assets/styles/global.css'
 import './style.css';
 import { Link } from 'react-router-dom';
 
+import Minion1 from '../../assets/images/minion-1.png'
+import Minion2 from '../../assets/images/minion-2.png'
+import Minion3 from '../../assets/images/minion-3.png'
+import Minion4 from '../../assets/images/minion-4.png'
+import Minion5 from '../../assets/images/minion-5.png'
+import Minion6 from '../../assets/images/minion-6.png'
+import Minion7 from '../../assets/images/minion-7.png'
+import Minion8 from '../../assets/images/minion-8.png'
+
 function Landing() {
     return (
         <div id="page-landing" className="container">
@@ -27,24 +36,31 @@ function Landing() {
                     <div className="body-text">Você quer um minion ?</div>
                     <div className="imagem-right"></div>
                 </header>
-                <article className="minion-item">
-                    <header>
-                        <img src="" alt="Minion1" />
-                        <div>
-                            <strong>Minion 1</strong>
-                        </div>
-                    </header>
-
-                    <p>
-                        Esse minion é brabo
-                    </p>
-
-                    <footer>
-                        <p>
-                            Preço
-                            <strong>R$ 40,00</strong>
-                        </p>
-                    </footer>
+                <article className="minion">
+                    <div class="minion-item">
+                        <img src={Minion1} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion2} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion3} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion4} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion5} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion6} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion7} alt="Minion1" />
+                    </div>
+                    <div class="minion-item">
+                        <img src={Minion8} alt="Minion1" />
+                    </div>
                 </article>
             </main>
         </div>
