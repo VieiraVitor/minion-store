@@ -23,7 +23,9 @@ function Landing() {
 
             <main>
                 <header className="page-landing-header">
-                    Ola ola ola 
+                    <div className="imagem-left"></div>
+                    <div className="body-text">Você quer um minion ?</div>
+                    <div className="imagem-right"></div>
                 </header>
                 <article className="minion-item">
                     <header>
