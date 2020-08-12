@@ -25,29 +25,45 @@ function Landing() {
                     <div className="imagem-right"></div>
                 </header>
                 <article className="minion">
-                    <MinionItem 
+                    <MinionItem
                         image={Minion1}
+                        title="Minion Bob"
+                        subtitle="Possui um bichinho de pelúcia"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion2}
+                        title="Minion Kevin"
+                        subtitle="É um lider"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion3}
+                        title="Minion Jerry"
+                        subtitle="Melhor amigo do Stuart"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion4}
+                        title="Minion Stuart"
+                        subtitle="É o mais faminto"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion5}
+                        title="Minion Mark"
+                        subtitle="Cantor e intelectual"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion6}
+                        title="Minion Dave"
+                        subtitle="Ama foguetes e mísseis"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion7}
+                        title="Minion Phil"
+                        subtitle="Ri de qualquer coisa"
                     />
-                    <MinionItem 
+                    <MinionItem
                         image={Minion8}
+                        title="Minion Vampiro"
+                        subtitle="É um vampiro"
                     />
                 </article>
             </main>

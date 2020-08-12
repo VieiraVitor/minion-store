@@ -4,7 +4,7 @@ import './style.css';
 
 function Navbar() {
     return (
-        <navbar className="page-navbar">
+        <div className="page-navbar">
             <div className="top-bar-container">
                 <Link to="/landing">
                     Página Inicial
@@ -16,7 +16,7 @@ function Navbar() {
                     Sair
                     </Link>
             </div>
-        </navbar>
+        </div>
     );
 }
 

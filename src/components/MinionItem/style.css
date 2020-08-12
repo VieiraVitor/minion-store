@@ -12,13 +12,16 @@
     width: 40rem;
     height: 40rem;
     margin: 10px;
+    border-radius: 8px;
+    background-color: #e7e5e5;
     box-shadow: 10px 5px 20px 0px #fae082;
+    text-align: center;
 }
 
 .minion-item img {
     max-width: 100%;
-    /* height: auto; */
-    max-height: 100%;
+    height: auto;
+    max-height: 70%;
 }
 
 .minion-item:hover {
