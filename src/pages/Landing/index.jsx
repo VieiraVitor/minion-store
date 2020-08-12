@@ -14,6 +14,7 @@ import Minion5 from '../../assets/images/minion-5.png';
 import Minion6 from '../../assets/images/minion-6.png';
 import Minion7 from '../../assets/images/minion-7.png';
 import Minion8 from '../../assets/images/minion-8.png';
+import Select from '../../components/Select';
 
 function Landing() {
     return (
@@ -91,18 +92,18 @@ function Landing() {
                                 name="email"
                                 label="Email"
                             />
-                            <Input
+                            <Select
                                 name="minion"
                                 label="Escolha seu Minion"
                                 options={[
-                                    { value: 'Bob', label: 'bob' },
-                                    { value: 'Kevin', label: 'kevin' },
-                                    { value: 'Jerry', label: 'jerry' },
-                                    { value: 'Stuart', label: 'stuart' },
-                                    { value: 'Mark', label: 'mark' },
-                                    { value: 'Dave', label: 'dave' },
-                                    { value: 'Phil', label: 'phil' },
-                                    { value: 'Vampiro', label: 'vampiro' },
+                                    { value: 'Bob', label: 'Bob' },
+                                    { value: 'Kevin', label: 'Kevin' },
+                                    { value: 'Jerry', label: 'Jerry' },
+                                    { value: 'Stuart', label: 'Stuart' },
+                                    { value: 'Mark', label: 'Mark' },
+                                    { value: 'Dave', label: 'Dave' },
+                                    { value: 'Phil', label: 'Phil' },
+                                    { value: 'Vampiro', label: 'Vampiro' },
                                 ]}
                             />
                         </fieldset>
