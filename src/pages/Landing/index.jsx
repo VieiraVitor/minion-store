@@ -12,6 +12,7 @@ import Minion5 from '../../assets/images/minion-5.png'
 import Minion6 from '../../assets/images/minion-6.png'
 import Minion7 from '../../assets/images/minion-7.png'
 import Minion8 from '../../assets/images/minion-8.png'
+import MinionItem from '../../components/MinionItem';
 
 function Landing() {
     return (
@@ -37,30 +38,30 @@ function Landing() {
                     <div className="imagem-right"></div>
                 </header>
                 <article className="minion">
-                    <div class="minion-item">
-                        <img src={Minion1} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion2} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion3} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion4} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion5} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion6} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion7} alt="Minion1" />
-                    </div>
-                    <div class="minion-item">
-                        <img src={Minion8} alt="Minion1" />
-                    </div>
+                    <MinionItem 
+                        image={Minion1}
+                    />
+                    <MinionItem 
+                        image={Minion2}
+                    />
+                    <MinionItem 
+                        image={Minion3}
+                    />
+                    <MinionItem 
+                        image={Minion4}
+                    />
+                    <MinionItem 
+                        image={Minion5}
+                    />
+                    <MinionItem 
+                        image={Minion6}
+                    />
+                    <MinionItem 
+                        image={Minion7}
+                    />
+                    <MinionItem 
+                        image={Minion8}
+                    />
                 </article>
             </main>
         </div>

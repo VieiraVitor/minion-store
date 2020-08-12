@@ -41,9 +41,9 @@ p {
 form {
     width: 40rem;
 }
-
+/* 
 @media (min-width: 700px) {
     :root {
         font-size: 72.5%;
     }
-}
+} */

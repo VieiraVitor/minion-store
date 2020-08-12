@@ -84,29 +84,3 @@ main .page-landing-header .imagem-right {
         background-color: #143550;
     }
 }
-
-/* Minion style */
-
-.minion {
-    width: 100%;
-    height: 100%;
-    margin: 10px 0;
-    /* max-width: 1000px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.minion-item {
-    width: 40rem;
-    height: 40rem;
-    margin: 10px;
-    box-shadow: 10px 14px 20px 0px #fdde69;
-}
-
-.minion-item img {
-    max-width: 100%;
-    /* height: auto; */
-    max-height: 100%;
-}
