@@ -32,6 +32,43 @@ main .page-landing-header .imagem-right {
     background-repeat: no-repeat;
 }
 
+#page-landing main section fieldset h2{
+   padding-top: 1.4rem;
+}
+
+#page-landing main section {
+    /* background-color: #f6d47d; */
+    background-color: #6a89a5;
+}
+
+#page-landing main form {
+    /* background: burlywood; */
+    background: #fddf7c;
+    width: 100%;
+    padding-bottom: 1.4rem;
+}
+
+#page-landing main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+#page-landing main fieldset+fieldset {
+    margin-top: 4.4rem;
+}
+
+#page-landing main fieldset legend {
+    font: 700 2.4rem Archivo;
+    color: var(--color-text-title);
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--color-line-in-white);
+}
+
 @media (max-width: 600px) {
     main .page-landing-header .imagem-left {
         background-image: none
@@ -45,5 +82,14 @@ main .page-landing-header .imagem-right {
         justify-content: center;
         height: 25vh;
         background-color: #143550;
+    }
+}
+
+@media (min-width: 700px) {
+    #page-landing main form {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 }

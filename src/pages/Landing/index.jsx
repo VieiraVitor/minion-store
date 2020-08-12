@@ -1,6 +1,7 @@
 import React from 'react';
 import MinionItem from '../../components/MinionItem';
 import Navbar from '../../components/Navbar';
+import Input from '../../components/Input';
 
 import '../../assets/styles/global.css'
 import './style.css';
@@ -66,8 +67,49 @@ function Landing() {
                         subtitle="É um vampiro"
                     />
                 </article>
+                <section>
+                    <form>
+                        <fieldset>
+                            <h2>Deseja reservar seus minions imediatamente ?</h2>
+                            <p>
+                                Basta preencher esse breve formulário, com seus dados,
+                                e em poucos minutos você estará recebendo um e-mail
+                                com todas as informações para a reserva dos minions.
+                    </p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Seus Dados</legend>
+                            <Input
+                                name="name"
+                                label="Nome completo"
+                            />
+                            <Input
+                                name="number"
+                                label="Número"
+                            />
+                            <Input
+                                name="email"
+                                label="Email"
+                            />
+                            <Input
+                                name="minion"
+                                label="Escolha seu Minion"
+                                options={[
+                                    { value: 'Bob', label: 'bob' },
+                                    { value: 'Kevin', label: 'kevin' },
+                                    { value: 'Jerry', label: 'jerry' },
+                                    { value: 'Stuart', label: 'stuart' },
+                                    { value: 'Mark', label: 'mark' },
+                                    { value: 'Dave', label: 'dave' },
+                                    { value: 'Phil', label: 'phil' },
+                                    { value: 'Vampiro', label: 'vampiro' },
+                                ]}
+                            />
+                        </fieldset>
+                    </form>
+                </section>
             </main>
-        </div>
+        </div >
     )
 }
 

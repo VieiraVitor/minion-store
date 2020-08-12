@@ -14,12 +14,10 @@ function Login() {
                         <Input
                             type="text"
                             placeholder="Login"
-                            label="Login"
                         />
                         <Input
                             type="password"
                             placeholder="Password"
-                            label="Password"
                         />
                         <footer>
                             <button type="submit">
