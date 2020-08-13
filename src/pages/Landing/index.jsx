@@ -75,7 +75,7 @@ function Landing() {
                             <p>
                                 Basta preencher esse breve formulário, com seus dados,
                                 e em poucos minutos você estará recebendo um e-mail
-                                com todas as informações para a reserva dos minions.
+                                com todas as informações para completar sua reserva.
                     </p>
                         </fieldset>
                         <fieldset>
