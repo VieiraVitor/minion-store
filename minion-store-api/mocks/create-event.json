@@ -1,0 +1,8 @@
+{
+    "body": "{\"name\":\"Vitor\",\"number\":\"123987\",\"email\":\"vitoryx@gmail.com\",\"minions\":\"[kevin]\"}",
+    "requestContext": {
+        "identity": {
+            "cognitoIdentityId": "USER-SUB-1234"
+        }
+    }
+}
