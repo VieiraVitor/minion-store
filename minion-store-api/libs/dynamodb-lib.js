@@ -8,7 +8,7 @@ export default {
 
   // cria uma reserva
   put   : (params) => client.put(params).promise(),
-  
+
   // recupera todas as reservas feitas por usuário
   query   : (params) => client.query(params).promise(),
 };
