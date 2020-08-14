@@ -2,11 +2,11 @@ import React from 'react';
 
 import './style.css';
 
-function Input(props){
+function Input({name, label, type, placeholder,...props}){
     return (
         <div className="input-block">
-            <label htmlFor={props.name}>{props.label}</label>
-            <input type={props.type} id={props.name} placeholder={props.placeholder}/>
+            <label htmlFor={name}>{label}</label>
+            <input type={type} id={name} placeholder={placeholder} {...props}/>
         </div>
     );
 }
