@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Input from '../../components/Input';
 import { Auth } from 'aws-amplify';
+import { useAppContext } from "../../libs/contextLib";
 
 import '../../assets/styles/global.css'
 import './style.css';
 
 function Login() {
+    const { userHasAuthenticated } = useAppContext();
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
@@ -17,7 +19,7 @@ function Login() {
         console.log(password);
         try {
             await Auth.signIn(email, password);
-            alert("Logged in");
+            userHasAuthenticated(true);
         } catch (e) {
             console.log(e)
             alert(e.message);
