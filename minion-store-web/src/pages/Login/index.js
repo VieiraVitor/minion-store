@@ -34,6 +34,7 @@ function Login() {
         } catch (e) {
             console.log(e)
             onError(e);
+            setIsLoading(false);
         }
     }
 
@@ -58,7 +59,7 @@ function Login() {
                             onChange={handleFieldChange}
                         />
                         <footer>
-                            <LoaderButton isLoading={isLoading} className={"margin: theme.spacing(3, 0, 2)"} disabled={!validateForm()} type="submit">
+                            <LoaderButton isLoading={isLoading} disabled={!validateForm()} type="submit">
                                 Entrar
                             </LoaderButton>
                             <p>

@@ -4,7 +4,7 @@ import "./style.css";
 
 function LoaderButton({ isLoading, className = "", disabled = false, ...props }) {
     return (
-        <Button className={`LoaderButton ${className}`} disabled={disabled} {...props} >
+        <Button className="LoaderButton" disabled={disabled || isLoading} {...props} >
             {isLoading && <CircularProgress className={"spinning"} size={12} />}
             {props.children}
         </Button>
