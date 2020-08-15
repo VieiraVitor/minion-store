@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAppContext } from "../../libs/contextLib";
+import { Auth } from 'aws-amplify';
 import './style.css';
 
 function Navbar() {
     const { userHasAuthenticated } = useAppContext();
+    const history = useHistory();
 
-    function handleLogout() {
+    async function handleLogout() {
+        await Auth.signOut();
+
         userHasAuthenticated(false);
+        history.push("/");
     }
 
     return (
