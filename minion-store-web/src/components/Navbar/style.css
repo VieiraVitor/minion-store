@@ -15,7 +15,6 @@
 }
 
 .page-navbar .top-bar-container a, button {
-    margin: 0 0.8rem;
     text-decoration: none;
     padding: 0.8rem;
     transition: opacity 0.2s;
