@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Input from '../../components/Input';
 import { Auth } from 'aws-amplify';
 import { useAppContext } from "../../libs/contextLib";
-
-import '../../assets/styles/global.css'
+import { onError } from "../../libs/errorLib";
+import '../../assets/styles/global.css';
 import './style.css';
 import { useHistory } from 'react-router-dom';
 import LoaderButton from '../../components/LoaderButton';
@@ -17,6 +17,10 @@ function Login() {
 
     const [isLoading, setIsLoading] = useState(false);
 
+    function validateForm() {
+        return email.length > 0 && password.length > 0;
+    }
+
     async function handleLogin(e) {
         e.preventDefault();
 
@@ -27,7 +31,7 @@ function Login() {
             history.push("/landing");
         } catch (e) {
             console.log(e)
-            alert(e.message);
+            onError(e);
         }
     }
 
@@ -50,7 +54,7 @@ function Login() {
                             onChange={(e) => { setPassword(e.target.value) }}
                         />
                         <footer>
-                            <LoaderButton isLoading={isLoading} type="submit">
+                            <LoaderButton isLoading={isLoading} disabled={!validateForm()} type="submit">
                                 Entrar
                             </LoaderButton>
                             <p>
