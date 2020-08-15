@@ -14,15 +14,21 @@
     padding: 1.6rem 0;
 }
 
-.page-navbar .top-bar-container a {
+.page-navbar .top-bar-container a, button {
     margin: 0 0.8rem;
     text-decoration: none;
     padding: 0.8rem;
     transition: opacity 0.2s;
 }
 
-.page-navbar .top-bar-container a:hover {
+.page-navbar .top-bar-container a:hover, button:hover {
     font-weight: bold;
+}
+
+.page-navbar .top-bar-container button {
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 @media (min-width: 700px) {

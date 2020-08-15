@@ -24,9 +24,9 @@ function Navbar() {
                 <Link to="/">
                     Minhas Reservas
                     </Link>
-                <Link onClick={handleLogout}>
+                <button onClick={handleLogout}>
                     Sair
-                </Link>
+                </button>
             </div>
         </div>
     );
