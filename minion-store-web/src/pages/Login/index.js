@@ -7,18 +7,20 @@ import '../../assets/styles/global.css';
 import './style.css';
 import { useHistory } from 'react-router-dom';
 import LoaderButton from '../../components/LoaderButton';
+import { useFormFields } from '../../libs/hooksLib';
 
 function Login() {
     const { userHasAuthenticated } = useAppContext();
     const history = useHistory();
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('');
-
     const [isLoading, setIsLoading] = useState(false);
 
+    const [fields, handleFieldChange] = useFormFields({
+        email: "",
+        password: ""
+    });
+
     function validateForm() {
-        return email.length > 0 && password.length > 0;
+        return fields.email.length > 0 && fields.password.length > 0;
     }
 
     async function handleLogin(e) {
@@ -26,7 +28,7 @@ function Login() {
 
         setIsLoading(true);
         try {
-            await Auth.signIn(email, password);
+            await Auth.signIn(fields.email, fields.password);
             userHasAuthenticated(true);
             history.push("/landing");
         } catch (e) {
@@ -42,19 +44,21 @@ function Login() {
                     <form onSubmit={handleLogin}>
                         <h1>Sign In</h1>
                         <Input
+                            id="email"
                             type="email"
                             placeholder="Login"
-                            value={email}
-                            onChange={(e) => { console.log(e); setEmail(e.target.value) }}
+                            value={fields.email}
+                            onChange={handleFieldChange}
                         />
                         <Input
+                            id="password"
                             type="password"
                             placeholder="Password"
-                            value={password}
-                            onChange={(e) => { setPassword(e.target.value) }}
+                            value={fields.password}
+                            onChange={handleFieldChange}
                         />
                         <footer>
-                            <LoaderButton isLoading={isLoading} disabled={!validateForm()} type="submit">
+                            <LoaderButton isLoading={isLoading} className={"margin: theme.spacing(3, 0, 2)"} disabled={!validateForm()} type="submit">
                                 Entrar
                             </LoaderButton>
                             <p>
