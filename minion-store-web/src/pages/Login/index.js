@@ -5,9 +5,11 @@ import { useAppContext } from "../../libs/contextLib";
 
 import '../../assets/styles/global.css'
 import './style.css';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
     const { userHasAuthenticated } = useAppContext();
+    const history = useHistory();
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
@@ -15,11 +17,10 @@ function Login() {
     async function handleLogin(e) {
         e.preventDefault();
 
-        console.log("email: " + email);
-        console.log(password);
         try {
             await Auth.signIn(email, password);
             userHasAuthenticated(true);
+            history.push("/landing");
         } catch (e) {
             console.log(e)
             alert(e.message);
