@@ -6,6 +6,7 @@ import { useAppContext } from "../../libs/contextLib";
 import '../../assets/styles/global.css'
 import './style.css';
 import { useHistory } from 'react-router-dom';
+import LoaderButton from '../../components/LoaderButton';
 
 function Login() {
     const { userHasAuthenticated } = useAppContext();
@@ -14,9 +15,12 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
 
+    const [isLoading, setIsLoading] = useState(false);
+
     async function handleLogin(e) {
         e.preventDefault();
 
+        setIsLoading(true);
         try {
             await Auth.signIn(email, password);
             userHasAuthenticated(true);
@@ -46,9 +50,9 @@ function Login() {
                             onChange={(e) => { setPassword(e.target.value) }}
                         />
                         <footer>
-                            <button type="submit">
-                                Sign In
-                            </button>
+                            <LoaderButton isLoading={isLoading} type="submit">
+                                Entrar
+                            </LoaderButton>
                             <p>
                                 Don't have a account ?
                             <a href="/new-account">
