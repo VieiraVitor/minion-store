@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MinionItem from '../../components/MinionItem';
 import Navbar from '../../components/Navbar';
 import Input from '../../components/Input';
+import { Auth } from 'aws-amplify';
+import { useAppContext } from "../../libs/contextLib";
+import { onError } from "../../libs/errorLib";
+import { useHistory } from 'react-router-dom';
+import LoaderButton from '../../components/LoaderButton';
+import { useFormFields } from '../../libs/hooksLib';
 
 import '../../assets/styles/global.css'
 import './style.css';
@@ -17,6 +23,22 @@ import Minion8 from '../../assets/images/minion-8.png';
 import Select from '../../components/Select';
 
 function Landing() {
+    const [isLoading, setIsLoading] = useState(false);
+    const [fields, handleFieldChange] = useFormFields({
+        name: "",
+        number: "",
+        email: "",
+        minon: ""
+    });
+
+    function validateForm() {
+        return fields.name.length > 0 && fields.email.length > 0 && fields.number.length > 0;
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+    }
+
     return (
         <div id="page-landing" className="container">
             <Navbar />
@@ -69,7 +91,7 @@ function Landing() {
                     />
                 </article>
                 <section>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <fieldset>
                             <h2>Deseja reservar seus minions imediatamente ?</h2>
                             <p>
@@ -81,18 +103,28 @@ function Landing() {
                         <fieldset>
                             <legend>Seus Dados</legend>
                             <Input
+                                id="name"
                                 name="name"
                                 label="Nome completo"
+                                value={fields.name}
+                                onChange={handleFieldChange}
                             />
                             <Input
+                                id="number"
                                 name="number"
                                 label="Número"
+                                value={fields.number}
+                                onChange={handleFieldChange}
                             />
                             <Input
+                                id="email"
                                 name="email"
                                 label="Email"
+                                value={fields.email}
+                                onChange={handleFieldChange}
                             />
                             <Select
+                                id="minion"
                                 name="minion"
                                 label="Escolha seu Minion"
                                 options={[
@@ -105,7 +137,14 @@ function Landing() {
                                     { value: 'Phil', label: 'Phil' },
                                     { value: 'Vampiro', label: 'Vampiro' },
                                 ]}
+                                value={fields.name}
+                                onChange={handleFieldChange}
                             />
+                            <footer>
+                                <LoaderButton isLoading={isLoading} disabled={!validateForm()} type="submit">
+                                    Reservar
+                                </LoaderButton>
+                            </footer>
                         </fieldset>
                     </form>
                 </section>
