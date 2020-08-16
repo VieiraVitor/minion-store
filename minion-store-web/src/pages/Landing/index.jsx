@@ -8,6 +8,7 @@ import { onError } from "../../libs/errorLib";
 import { useHistory } from 'react-router-dom';
 import LoaderButton from '../../components/LoaderButton';
 import { useFormFields } from '../../libs/hooksLib';
+import Select from 'react-select';
 
 import '../../assets/styles/global.css'
 import './style.css';
@@ -20,7 +21,6 @@ import Minion5 from '../../assets/images/minion-5.png';
 import Minion6 from '../../assets/images/minion-6.png';
 import Minion7 from '../../assets/images/minion-7.png';
 import Minion8 from '../../assets/images/minion-8.png';
-import Select from '../../components/Select';
 
 function Landing() {
     const [isLoading, setIsLoading] = useState(false);
@@ -28,15 +28,40 @@ function Landing() {
         name: "",
         number: "",
         email: "",
-        minon: ""
     });
+
+    const [selectedMinion, setSelectedMinion] = useState([]);
+
+    const minions = [
+        { value: 'Bob', label: 'Bob' },
+        { value: 'Kevin', label: 'Kevin' },
+        { value: 'Jerry', label: 'Jerry' },
+        { value: 'Stuart', label: 'Stuart' },
+        { value: 'Mark', label: 'Mark' },
+        { value: 'Dave', label: 'Dave' },
+        { value: 'Phil', label: 'Phil' },
+        { value: 'Vampiro', label: 'Vampiro' }
+    ]
+
+    const handleMinionChange = e => {
+        let position = 0;
+        for (let index in e) {
+            position = e[index];
+        }
+        const { value } = position;
+        const updateSelectedMinions = [...selectedMinion];
+        updateSelectedMinions.push(value);
+
+        setSelectedMinion(updateSelectedMinions);
+    };
 
     function validateForm() {
         return fields.name.length > 0 && fields.email.length > 0 && fields.number.length > 0;
     }
 
-    function handleSubmit(e){
-        e.preventDefault()
+    function handleSubmit(e) {
+        e.preventDefault();
+
     }
 
     return (
@@ -91,14 +116,14 @@ function Landing() {
                     />
                 </article>
                 <section>
-                    <form onSubmit={handleSubmit}>
+                    <form>
                         <fieldset>
                             <h2>Deseja reservar seus minions imediatamente ?</h2>
                             <p>
                                 Basta preencher esse breve formulário, com seus dados,
                                 e em poucos minutos você estará recebendo um e-mail
                                 com todas as informações para completar sua reserva.
-                    </p>
+                            </p>
                         </fieldset>
                         <fieldset>
                             <legend>Seus Dados</legend>
@@ -123,22 +148,16 @@ function Landing() {
                                 value={fields.email}
                                 onChange={handleFieldChange}
                             />
+                            <h2>Selecione um Minion</h2>
                             <Select
-                                id="minion"
-                                name="minion"
-                                label="Escolha seu Minion"
-                                options={[
-                                    { value: 'Bob', label: 'Bob' },
-                                    { value: 'Kevin', label: 'Kevin' },
-                                    { value: 'Jerry', label: 'Jerry' },
-                                    { value: 'Stuart', label: 'Stuart' },
-                                    { value: 'Mark', label: 'Mark' },
-                                    { value: 'Dave', label: 'Dave' },
-                                    { value: 'Phil', label: 'Phil' },
-                                    { value: 'Vampiro', label: 'Vampiro' },
-                                ]}
-                                value={fields.name}
-                                onChange={handleFieldChange}
+                                defaultValue={[]}
+                                isMulti
+                                name="minions"
+                                options={minions}
+                                className="basic-multi-select"
+                                classNamePrefix="select"
+                                menuPlacement="top"
+                                onChange={handleMinionChange}
                             />
                             <footer>
                                 <LoaderButton isLoading={isLoading} disabled={!validateForm()} type="submit">
