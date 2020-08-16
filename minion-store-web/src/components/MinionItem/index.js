@@ -2,12 +2,12 @@ import React from 'react';
 
 import './style.css';
 
-function MinionItem(props){
+function MinionItem({image, title, subtitle, ...props}){
     return (
         <div className="minion-item">
-            <img src={props.image} alt="Minion1"/>
-            <h2>{props.title}</h2>
-            <p>{props.subtitle}</p>
+            <img src={image} alt="Minion1"/>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
         </div>
     );
 }
