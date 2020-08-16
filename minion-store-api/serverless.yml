@@ -35,6 +35,10 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:us-east-1:662176293706:table/reservations"
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: "*"
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -75,6 +79,15 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+
+  sendEmail:
+    handler: sendEmail.main
+    events:
+      - http:
+          path: send-mail
+          method: post
+          cors: true
+
 resources:
   # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
