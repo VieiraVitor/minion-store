@@ -59,20 +59,40 @@ function Landing() {
         return fields.name.length > 0 && fields.email.length > 0 && fields.number.length > 0 && selectedMinion.length > 0;
     }
 
+    async function sendMail(body) {
+        await API.post("reservations", "/send-mail", {
+            body: {
+                to: body.email,
+                name: body.name,
+                content: body.minions
+            }
+        }).then(
+            function (res) {
+                console.log("email sent");
+            })
+            .catch(
+                function (err) {
+                    console.error(err, err.stack);
+                    alert("Ocorreu um erro no envio do email. Verifique se os emails estão verificados no SES.");
+                });
+    }
+
     async function handleSubmit(e) {
         e.preventDefault();
 
         setIsLoading(true);
 
+        const body = {
+            name: fields.name,
+            number: fields.number,
+            email: fields.email,
+            minions: selectedMinion
+        }
+
         try {
             await API.post("reservations", "/reservations", {
-                body: {
-                    name: fields.name,
-                    number: fields.number,
-                    email: fields.email,
-                    minions: selectedMinion
-                }
-            })
+                body: body
+            }).then(sendMail(body));
             alert("Reserva realizada!")
             setIsLoading(false);
             history.push("/reservations")
@@ -90,8 +110,8 @@ function Landing() {
                     <div className="imagem-left"></div>
                     <div className="body-text">
                         <h1>Seja bem vindo !</h1>
-                        Aqui na Minion Store você encontra diversas miniaturas dos famigerados e fofinhos Minions.    
-                        Reserve já seu Minions !  
+                        Aqui na Minion Store você encontra diversas miniaturas dos famigerados e fofinhos Minions.
+                        Reserve já seu Minions !
                     </div>
                     <div className="imagem-right"></div>
                 </header>

@@ -4,18 +4,18 @@ import AWS from "aws-sdk";
 const SES = new AWS.SES();
 
 export const main = handler(async (event, context) => {
-    const { to, from, subject, text } = JSON.parse(event.body);
+    const { to, name, content } = JSON.parse(event.body);
 
     const params = {
-        Source: from,
+        Source: 'vitoryx@gmail.com',
         Destination: {
             ToAddresses: [to],
         },
         Message: {
             Body: {
-                Text: { Data: text },
+                Text: { Data: `Parabéns, ${name} !\nVocê acaba de reservar esses maravilhosos minions: ${content}` },
             },
-            Subject: { Data: subject },
+            Subject: { Data: `Reserva concluída por ${name}` },
         },
     };
 
