@@ -3,11 +3,12 @@ import Input from '../../components/Input';
 import { Auth } from 'aws-amplify';
 import { useAppContext } from "../../libs/contextLib";
 import { onError } from "../../libs/errorLib";
-import '../../assets/styles/global.css';
-import './style.css';
 import { useHistory } from 'react-router-dom';
 import LoaderButton from '../../components/LoaderButton';
 import { useFormFields } from '../../libs/hooksLib';
+
+import '../../assets/styles/global.css';
+import './style.css';
 
 function Login() {
     const { userHasAuthenticated } = useAppContext();

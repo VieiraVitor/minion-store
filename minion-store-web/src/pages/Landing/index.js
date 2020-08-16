@@ -19,8 +19,10 @@ import Minion5 from '../../assets/images/minion-5.png';
 import Minion6 from '../../assets/images/minion-6.png';
 import Minion7 from '../../assets/images/minion-7.png';
 import Minion8 from '../../assets/images/minion-8.png';
+import { useHistory } from 'react-router-dom';
 
 function Landing() {
+    const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [fields, handleFieldChange] = useFormFields({
         name: "",
@@ -73,6 +75,7 @@ function Landing() {
             })
             alert("Reserva realizada!")
             setIsLoading(false);
+            history.push("/reservations")
         } catch (e) {
             onError(e);
             setIsLoading(false);
@@ -85,7 +88,11 @@ function Landing() {
             <main>
                 <header className="page-landing-header">
                     <div className="imagem-left"></div>
-                    <div className="body-text">Você quer um minion ?</div>
+                    <div className="body-text">
+                        <h1>Seja bem vindo !</h1>
+                        Aqui na Minion Store você encontra diversas miniaturas dos famigerados e fofinhos Minions.    
+                        Reserve já seu Minions !  
+                    </div>
                     <div className="imagem-right"></div>
                 </header>
                 <article className="minion">
