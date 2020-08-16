@@ -120,41 +120,49 @@ function Landing() {
                         image={Minion1}
                         title="Minion Bob"
                         subtitle="Possui um bichinho de pelúcia"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion2}
                         title="Minion Kevin"
                         subtitle="É um lider"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion3}
                         title="Minion Jerry"
                         subtitle="Melhor amigo do Stuart"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion4}
                         title="Minion Stuart"
                         subtitle="É o mais faminto"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion5}
                         title="Minion Mark"
                         subtitle="Cantor e intelectual"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion6}
                         title="Minion Dave"
                         subtitle="Ama foguetes e mísseis"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion7}
                         title="Minion Phil"
                         subtitle="Ri de qualquer coisa"
+                        price="R$ 40,00"
                     />
                     <MinionItem
                         image={Minion8}
                         title="Minion Vampiro"
                         subtitle="É um vampiro"
+                        price="R$ 45,00"
                     />
                 </article>
                 <section>
