@@ -74,7 +74,8 @@ function Landing() {
                     minions: selectedMinion
                 }
             })
-            history.push("/landing");
+            alert("Reserva realizada!")
+            setIsLoading(false);
         } catch (e) {
             onError(e);
             setIsLoading(false);
@@ -133,7 +134,7 @@ function Landing() {
                     />
                 </article>
                 <section>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <fieldset>
                             <h2>Deseja reservar seus minions imediatamente ?</h2>
                             <p>
