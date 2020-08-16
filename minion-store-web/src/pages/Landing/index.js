@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import MinionItem from '../../components/MinionItem';
 import Navbar from '../../components/Navbar';
 import Input from '../../components/Input';
-import { Auth, API } from 'aws-amplify';
-import { useAppContext } from "../../libs/contextLib";
+import { API } from 'aws-amplify';
 import { onError } from "../../libs/errorLib";
-import { useHistory } from 'react-router-dom';
 import LoaderButton from '../../components/LoaderButton';
 import { useFormFields } from '../../libs/hooksLib';
 import Select from 'react-select';
@@ -23,7 +21,6 @@ import Minion7 from '../../assets/images/minion-7.png';
 import Minion8 from '../../assets/images/minion-8.png';
 
 function Landing() {
-    const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [fields, handleFieldChange] = useFormFields({
         name: "",

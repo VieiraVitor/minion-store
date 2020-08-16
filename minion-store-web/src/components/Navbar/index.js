@@ -21,7 +21,7 @@ function Navbar() {
                 <Link to="/landing">
                     Página Inicial
                     </Link>
-                <Link to="/">
+                <Link to="/reservations">
                     Minhas Reservas
                     </Link>
                 <button onClick={handleLogout}>

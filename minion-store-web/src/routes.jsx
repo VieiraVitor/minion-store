@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import CreateAccount from './pages/CreateAccount';
 import Landing from './pages/Landing';
 import NotFound from './components/NotFound';
+import Reservations from './pages/Reservations';
 
 function Routes() {
     return (
@@ -12,6 +13,7 @@ function Routes() {
                 <Route path="/" exact component={Login} />
                 <Route path="/new-account" exact component={CreateAccount} />
                 <Route path="/landing" exact component={Landing} />
+                <Route path="/reservations" exact component={Reservations} />
                 <Route component={NotFound} />
             </Switch>
         </BrowserRouter>

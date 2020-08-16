@@ -1,0 +1,53 @@
+main .page-reservations-header p {
+    text-align: center;
+}
+
+main .page-reservations-header {
+    display: grid;
+    grid-template-columns: 25% 35% auto;
+    grid-gap: 10px;
+    background-color: #143550;
+    padding: 10px;
+    width: 100%;
+    height: 45vh;
+}
+
+main .page-reservations-header .body-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 2.6rem;
+}
+
+main .page-reservations-header .imagem-left {
+    background: url("../../assets/images/minions-reservations-2.png") left bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+main .page-reservations-header .imagem-right {
+    background: url("../../assets/images/minions-reservations.png") right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.page-reservations main section {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+    main .page-reservations-header .imagem-left {
+        background-image: none
+    }
+    main .page-reservations-header .imagem-right {
+        background-image: none
+    }
+    main .page-reservations-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25vh;
+        background-color: #143550;
+    }
+}
