@@ -75,7 +75,7 @@ function CreateAccount() {
             await Auth.signIn(fields.email, fields.password);
 
             userHasAuthenticated(true);
-            history.push("/landing");
+            history.push("/");
         } catch (e) {
             onError(e);
             setIsLoading(false);
@@ -146,7 +146,7 @@ function CreateAccount() {
                             </LoaderButton>
                             <p>
                                 Já possui uma conta ?
-                            <Link to="/">
+                            <Link to="/login">
                                     Faça seu Login
                             </Link>
                             </p>
