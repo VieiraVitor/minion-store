@@ -43,18 +43,18 @@ function Login() {
             <div id="page-login-form" className="container">
                 <main>
                     <form onSubmit={handleLogin}>
-                        <h1>Sign In</h1>
+                        <h1>Entrar</h1>
                         <Input
                             id="email"
                             type="email"
-                            placeholder="Login"
+                            placeholder="Email"
                             value={fields.email}
                             onChange={handleFieldChange}
                         />
                         <Input
                             id="password"
                             type="password"
-                            placeholder="Password"
+                            placeholder="Senha"
                             value={fields.password}
                             onChange={handleFieldChange}
                         />
@@ -63,9 +63,9 @@ function Login() {
                                 Entrar
                             </LoaderButton>
                             <p>
-                                Don't have a account ?
+                                Ainda não possui uma conta ?
                             <a href="/new-account">
-                                    Sign Up
+                                    Cadastre-se
                             </a>
                             </p>
                         </footer>
