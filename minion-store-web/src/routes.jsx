@@ -12,9 +12,9 @@ function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <UnauthenticatedRoute exact path="/" exact component={Login} />
+                <UnauthenticatedRoute exact path="/login" exact component={Login} />
                 <UnauthenticatedRoute exact path="/new-account" exact component={CreateAccount} />
-                <AuthenticatedRoute exact path="/landing" exact component={Landing} />
+                <AuthenticatedRoute exact path="/" exact component={Landing} />
                 <AuthenticatedRoute path="/reservations" exact component={Reservations} />
                 <Route component={NotFound} />
             </Switch>

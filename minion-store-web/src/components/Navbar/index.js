@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <div className="page-navbar">
             <div className="top-bar-container">
-                <Link to="/landing">
+                <Link to="/">
                     Página Inicial
                     </Link>
                 <Link to="/reservations">

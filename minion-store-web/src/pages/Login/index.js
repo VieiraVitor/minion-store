@@ -32,7 +32,7 @@ function Login() {
         try {
             await Auth.signIn(fields.email, fields.password);
             userHasAuthenticated(true);
-            history.push("/landing");
+            history.push("/");
         } catch (e) {
             console.log(e)
             onError(e);
