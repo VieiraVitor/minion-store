@@ -15,13 +15,6 @@ import Typography from '@material-ui/core/Typography';
 
 import './style.css';
 
-const useStyles = makeStyles({
-    table: {
-        minWidth: 650,
-    },
-
-});
-
 const theme = createMuiTheme({
     typography: {
         fontSize: '0.2rem'
@@ -29,7 +22,6 @@ const theme = createMuiTheme({
 });
 
 function Reservations() {
-    const classes = useStyles();
     const [reservations, setReservations] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const { isAuthenticated } = useAppContext();
@@ -68,8 +60,8 @@ function Reservations() {
                 <section>
                     <ThemeProvider theme={theme}>
                         <Typography>
-                            <TableContainer className={classes.table} component={Paper}>
-                                <Table className={classes.table} theme aria-label="simple table">
+                            <TableContainer component={Paper}>
+                                <Table aria-label="simple table">
                                     <TableHead>
                                         <TableRow>
                                             <TableCell>Data</TableCell>
