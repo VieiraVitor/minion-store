@@ -6,6 +6,7 @@ import { onError } from "../../libs/errorLib";
 import { useHistory } from 'react-router-dom';
 import LoaderButton from '../../components/LoaderButton';
 import { useFormFields } from '../../libs/hooksLib';
+import { Link } from 'react-router-dom';
 
 import '../../assets/styles/global.css';
 import './style.css';
@@ -65,9 +66,9 @@ function Login() {
                             </LoaderButton>
                             <p>
                                 Ainda não possui uma conta ?
-                            <a href="/new-account">
+                            <Link to="/new-account">
                                     Cadastre-se
-                            </a>
+                            </Link>
                             </p>
                         </footer>
                     </form>
