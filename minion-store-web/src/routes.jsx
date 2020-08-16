@@ -5,15 +5,17 @@ import CreateAccount from './pages/CreateAccount';
 import Landing from './pages/Landing';
 import NotFound from './components/NotFound';
 import Reservations from './pages/Reservations';
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
 function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact component={Login} />
-                <Route path="/new-account" exact component={CreateAccount} />
-                <Route path="/landing" exact component={Landing} />
-                <Route path="/reservations" exact component={Reservations} />
+                <UnauthenticatedRoute exact path="/" exact component={Login} />
+                <UnauthenticatedRoute exact path="/new-account" exact component={CreateAccount} />
+                <AuthenticatedRoute exact path="/landing" exact component={Landing} />
+                <AuthenticatedRoute path="/reservations" exact component={Reservations} />
                 <Route component={NotFound} />
             </Switch>
         </BrowserRouter>
