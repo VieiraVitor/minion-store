@@ -148,7 +148,9 @@ function Landing() {
                                 value={fields.email}
                                 onChange={handleFieldChange}
                             />
-                            <h2>Selecione um Minion</h2>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Selecione um ou mais Minions</legend>
                             <Select
                                 defaultValue={[]}
                                 isMulti
