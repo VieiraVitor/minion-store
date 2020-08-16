@@ -23,7 +23,6 @@ const theme = createMuiTheme({
 
 function Reservations() {
     const [reservations, setReservations] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
     const { isAuthenticated } = useAppContext();
 
     useEffect(() => {
@@ -38,8 +37,6 @@ function Reservations() {
             } catch (e) {
                 onError(e);
             }
-
-            setIsLoading(false);
         }
 
         onLoad();
