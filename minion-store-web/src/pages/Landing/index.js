@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MinionItem from '../../components/MinionItem';
 import Navbar from '../../components/Navbar';
 import Input from '../../components/Input';
-import { Auth } from 'aws-amplify';
+import { Auth, API } from 'aws-amplify';
 import { useAppContext } from "../../libs/contextLib";
 import { onError } from "../../libs/errorLib";
 import { useHistory } from 'react-router-dom';
@@ -23,6 +23,7 @@ import Minion7 from '../../assets/images/minion-7.png';
 import Minion8 from '../../assets/images/minion-8.png';
 
 function Landing() {
+    const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [fields, handleFieldChange] = useFormFields({
         name: "",
@@ -56,12 +57,28 @@ function Landing() {
     };
 
     function validateForm() {
-        return fields.name.length > 0 && fields.email.length > 0 && fields.number.length > 0;
+        return fields.name.length > 0 && fields.email.length > 0 && fields.number.length > 0 && selectedMinion.length > 0;
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
+        setIsLoading(true);
+
+        try {
+            await API.post("reservations", "/reservations", {
+                body: {
+                    name: fields.name,
+                    number: fields.number,
+                    email: fields.email,
+                    minions: selectedMinion
+                }
+            })
+            history.push("/landing");
+        } catch (e) {
+            onError(e);
+            setIsLoading(false);
+        }
     }
 
     return (
