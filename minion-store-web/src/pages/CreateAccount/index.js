@@ -140,6 +140,7 @@ function CreateAccount() {
                             value={fields.confirmPassword}
                             onChange={handleFieldChange}
                         />
+                        <span>A senha deve conter no mínimo 8 caracteres, sendo eles: 1 letra maiúscula e minúscula, 1 número e 1 caractere especial</span>
                         <footer>
                             <LoaderButton isLoading={isLoading} disabled={!validateForm()} type="submit">
                                 Criar Conta

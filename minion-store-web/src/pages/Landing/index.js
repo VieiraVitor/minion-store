@@ -179,7 +179,7 @@ function Landing() {
                             <Input
                                 id="number"
                                 name="number"
-                                label="Número"
+                                label="Telefone"
                                 value={fields.number}
                                 onChange={handleFieldChange}
                             />

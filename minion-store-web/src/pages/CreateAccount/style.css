@@ -35,3 +35,7 @@
     border: 0;
     cursor: pointer;
 }
+
+#page-create-account-form span{
+    font-size: 1.2rem;
+}
