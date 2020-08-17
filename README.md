@@ -31,5 +31,46 @@ O motivo do projeto é participar do desafio da BGC e aprimorar meus conheciment
 <li>Botão "Sair" desautentica usuário e redireciona para página de login</li>
 <li>Usuário não autorizado só consegue acessar página de login e cadastro</li>
 
+# Rodar o front-end no ambiente local
+## Linux (Ubuntu/Debian)
+
+Para instalar o Yarn no Linux configurando o repositório do **Yarn**:
+
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+```
+
+Instale utilizando o seguinte comando:
+
+```bash
+ sudo apt update && sudo apt install --no-install-recommends yarn
+```
+
+Adicione ao arquivo `~/.bashrc` a seguinte linha: 
+
+```bash
+export PATH="$PATH:`yarn global bin`"
+```
+
+Feche e abra o terminal novamente, ou execute `source ~/.bashrc` e em seguida rode o comando:
+
+```bash
+ yarn --version
+```
+
+Caso retorne a versão do Yarn (acima de 1.0, abaixo de 2.0), a instalação ocorreu com sucesso.
+
+Acesse o diretório da aplicação `minion-store-web/` e rode o comando abaixo para baixar as dependencias:
+
+```bash
+yarn install
+```
+
+Para executar o servidor:
+
+```bash
+yarn start
+```
 
 
