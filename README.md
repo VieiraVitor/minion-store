@@ -27,7 +27,7 @@ O motivo do projeto é participar do desafio da BGC e aprimorar meus conheciment
 <li>Cadastro de usuários com token de autenticação fornecido pelo AWS Cognito</li>
 <li>Login de usuários autenticado com o AWS Cognito</li>
 <li>Informações preenchidas no formulário de reserva de minions, salvas no banco de dados AWS DynamoDB</li>
-<li>Página de histórico de reservas recebe as informações das reservas armazenadas no AWS DynamoDB para preencher a tabela com o histórico<li>
+<li>Página de histórico de reservas recebe as informações das reservas armazenadas no AWS DynamoDB para preencher a tabela com o histórico</li>
 <li>Botão "Sair" desautentica usuário e redireciona para página de login</li>
 <li>Usuário não autorizado só consegue acessar página de login e cadastro</li>
 
