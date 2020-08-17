@@ -7,16 +7,19 @@ export const main = handler(async (event, context) => {
     const { to, name, content } = JSON.parse(event.body);
 
     const params = {
-        Source: 'vieirachp@hotmail.com',
         Destination: {
             ToAddresses: [to],
+            BccAddresses: ["thiago@bgcbrasil.com.br"],
         },
         Message: {
             Body: {
-                Text: { Data: `Parabéns, ${name} !\nVocê acaba de reservar esses maravilhosos minions: ${content}` },
+                Text: {
+                    Data: `Parabéns, ${name} !\nVocê acaba de reservar esses maravilhosos Minions: ${content}\nEntraremos em contato com você para mais informações referente ao pagamento e entrega dos seus Minions`
+                },
             },
-            Subject: { Data: `Reserva dos Minions - concluída por ${name}` },
+            Subject: { Data: `Reserva dos Minions concluída por ${name}` },
         },
+        Source: 'vitoryx@gmail.com',
     };
 
     try {
